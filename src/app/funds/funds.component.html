@@ -1,0 +1,79 @@
+<div class="flex flex-1 p-4 rounded-lg justify-between shadow w-full">
+  <div class="flex max-w-xs">
+    <div>
+      <div class="text-md text-gray-500 mb-1">
+        Available Balance <i class="fa-solid ml-1 fa-wallet text-blue-500"></i>
+      </div>
+      <div class="text-3xl font-bold">
+        ₹{{ availableBal }}
+        <span class="text-green-500 text-sm"
+          >↗︎ {{ mainBalChangeAmount }} ({{ mainBalChange }}%)</span
+        >
+      </div>
+
+      <div class="mt-1">
+        <button
+          class="border rounded-md mr-1 border-gray-400 p-1 py-1 text-gray-500 hover:bg-gray-500 hover:text-gray-100"
+          style="font-size: 8px"
+        >
+          All Time
+        </button>
+        <button
+          class="border rounded-md mr-1 border-gray-400 p-1 py-1 text-gray-500 hover:bg-gray-500 hover:text-gray-100"
+          style="font-size: 8px"
+          (click)="onThisTermBal()"
+        >
+          This Term
+        </button>
+      </div>
+      <div class="mt-2 text-info text-xs">
+        <div class="flex text-sky-500">
+          <p class="mr-4 text-orange-500">Withdrawn : ₹25252</p>
+          <p>Deposited : ₹34234</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex max-w-xs">
+    <div>
+      <div class="text-md text-gray-500 mb-1">
+        Projected Balance
+        <i class="fa-solid ml-1 fa-arrow-trend-up text-green-500"></i>
+      </div>
+      <div class="text-3xl font-bold">
+        ₹2,50,000 <span class="text-green-500 text-sm">↗︎ 400 (22%)</span>
+      </div>
+
+      <div class="mt-1">
+        <button
+          class="border rounded-md mr-1 border-gray-400 p-1 py-1 text-gray-500 hover:bg-gray-500 hover:text-gray-100"
+          style="font-size: 8px"
+        >
+          This Term
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex max-w-xs">
+    <div>
+      <div class="text-md text-gray-500 mb-1">
+        P & L
+        <i
+          class="fa-solid ml-1 fa-up-right-and-down-left-from-center text-purple-500"
+        ></i>
+      </div>
+      <div class="text-3xl font-bold">
+        ₹2,50,000 <span class="text-green-500 text-sm">↗︎ 400 (22%)</span>
+      </div>
+
+      <div class="mt-1">
+        <button
+          class="border rounded-md mr-1 border-gray-400 p-1 py-1 text-gray-500 hover:bg-gray-500 hover:text-gray-100"
+          style="font-size: 8px"
+        >
+          All Time
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

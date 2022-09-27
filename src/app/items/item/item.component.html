@@ -1,0 +1,63 @@
+<div
+  class="rounded-lg w-full shadow-md py-4 px-4 text-gray-800 bg-gray-100 my-2"
+>
+  <p class="text-xs text-gray-400" style="font-size: 8px">{{ trade?.date }}</p>
+  <header class="flex justify-between mb-2">
+    <h2 class="text-xl">
+      {{ trade.stockName
+      }}<span class="text-xs py-1 px-1 text-red-400" style="font-size: 10px"
+        >{{ trade.tradeType }} <i class="fa-solid fa-arrow-trend-down"></i
+      ></span>
+    </h2>
+    <h2 class="pt-1">
+      P & L : <span class="text-green-500">₹{{ trade.netPl }}</span>
+    </h2>
+  </header>
+  <p class="text-xs text-blue-400">
+    Qty : <span>{{ trade.qty }}</span>
+  </p>
+  <div class="text-xs text-gray-500">
+    <div class="w-full">
+      <div class="flex my-2">
+        <p class="w-48">
+          Average Sell Price : <span>₹{{ trade.sellPrice }}</span>
+        </p>
+        <p>
+          Total Margin : <span>₹{{ trade.sellMargin }}</span>
+        </p>
+      </div>
+      <div class="flex my-2">
+        <p class="w-48">
+          Average Buy Price : <span>₹{{ trade.buyPrice }} </span>
+        </p>
+        <p>
+          Total Margin : <span>₹{{ trade.buyMargin }}</span>
+        </p>
+      </div>
+      <hr />
+      <div class="flex justify-between items-center">
+        <div>
+          <div class="flex my-2 w-full">
+            <p>
+              Gross P&L : <span>₹{{ trade.grossPl }}</span>
+            </p>
+            <p class="ml-4">
+              - Brokerage : <span>₹{{ trade.brokerage }}</span>
+            </p>
+            <p class="ml-4">
+              - Charges : <span>₹{{ trade.charges }}</span>
+            </p>
+          </div>
+          <div>
+            <p>Notes : {{ trade.notes }}</p>
+          </div>
+        </div>
+        <div class="mr-2 mt-2" *ngIf="!preview">
+          <button class="text-xl text-red-500">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

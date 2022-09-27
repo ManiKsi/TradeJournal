@@ -1,0 +1,23 @@
+<div class="my-4 flex items-center justify-between">
+  <div class="flex">
+    <img src="{{ user.photoURL }}" alt="" class="w-24 h-24 rounded-full mr-2" />
+    <div>
+      <h1 class="text-5xl m-2">Hello {{ user.displayName }}.</h1>
+      <p class="ml-2 pl-1 text-xl">How did your trading go today?</p>
+    </div>
+  </div>
+  <div class="mr-4 flex flex-col">
+    <button
+      class="text-xs bg-blue-500 text-gray-50 p-2 w-24 rounded-md hover:bg-blue-600"
+      routerLink="/newtrade"
+    >
+      New Trade
+    </button>
+    <button
+      (click)="signOut()"
+      class="text-gray-500 text-xs rounded-md w-24 border p-2 mt-2 hover:bg-gray-200"
+    >
+      Sign Out
+    </button>
+  </div>
+</div>

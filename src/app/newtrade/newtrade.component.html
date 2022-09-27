@@ -1,0 +1,103 @@
+<button
+  class="border text-xs bg-gray-500 py-2 px-3 rounded text-white"
+  routerLink="/"
+>
+  <span><i class="fa-solid fa-arrow-left mr-2"></i></span>Go to Home
+</button>
+<h2 class="text-xl text-gray-800 mt-4">Record a new trade</h2>
+<form class="text-gray-600" (change)="onFormChange()">
+  <label for="stockName"></label>
+  <input type="text" id="stock-name" name="stockName" />
+  <h4 class="text-sm">Trade Type</h4>
+
+  <!-- <div class="flex p-2">
+    <div class="flex items-center mr-4">
+      <input type="checkbox" class=" " />
+      <label for="trade-type" class="text-xs ml-1">Long</label>
+    </div>
+    <div class="flex items-center">
+      <input type="checkbox" />
+      <label for="trade-type" class="text-xs ml-1">Short</label>
+    </div>
+  </div> -->
+  <hr />
+  <div class="p-2">
+    <div class="text-sm">
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Date</label>
+        <input
+          type="date"
+          class="border my-1 p-1 rounded-md"
+          name="sellPrice"
+          [(ngModel)]="data.date"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Stock Name</label>
+        <input
+          type="text"
+          class="border my-1 p-1 rounded-md"
+          name="stockName"
+          [(ngModel)]="data.stockName"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Average Sell Price</label>
+        <input
+          type="text"
+          class="border my-1 p-1 rounded-md"
+          name="sellPrice"
+          [(ngModel)]="data.sellPrice"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Average Buy Price</label>
+        <input
+          type="text"
+          class="border my-1 p-1 rounded-md"
+          name="buyPrice"
+          [(ngModel)]="data.buyPrice"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Quantity</label>
+        <input
+          type="text"
+          class="border my-1 p-1 rounded-md"
+          name="qty"
+          [(ngModel)]="data.qty"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Total Orders</label>
+        <input
+          type="number"
+          class="border my-1 p-1 rounded-md"
+          name="orders"
+          [(ngModel)]="data.orders"
+        />
+      </div>
+      <div class="text-xs flex items-center my-2">
+        <input type="checkbox" class="border my-1 p-1" />
+        <label for="" class="ml-1">Auto Square Off</label>
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="mt-2">Notes</label>
+        <input
+          type="text"
+          class="border my-1 p-1 rounded-md"
+          name="notes"
+          [(ngModel)]="data.notes"
+        />
+      </div>
+    </div>
+  </div>
+  <app-item [trade]="trade" [preview]="true"></app-item>
+  <button
+    type="submit"
+    (click)="onFormSubmit()"
+    class="border py-2 rounded-md px-3 bg-blue-500 mt-2 text-xs ml-2 text-white hover:bg-blue-400"
+  >
+    Submit
+  </button>
+</form>
